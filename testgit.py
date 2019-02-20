@@ -29,7 +29,7 @@ data_meminfo_whole = fl.data_released("".join(["data_meminfo_whole", "_", ym]))
 data_meminfo = fl.data_released("".join(["data_meminfo", "_", ym]))
 
 '''数据处理'''
-
+data_itg = pd.merge(data_itg,data_prodinfo,how='left',on='产品key')
 
 '''数据统计'''
 
