@@ -35,3 +35,6 @@ data_itg = pd.merge(data_itg,data_prodinfo,how='left',on='产品key')
 first_itg = fl.get_firsttime(data_itg, colname=["会员手机号码", "交易时间", "交易日期"],sortcol=["会员手机号码", "交易时间"], dropcol=["会员手机号码"],rename={"交易日期": "年度首次积分日期"})
 
 '''数据导出'''
+writer = pd.ExcelWriter('C:/Users/laoyh/Desktop/test.xlsx',engine='xlsxwriter')
+first_itg.to_excel(writer,sheet_name='test',index=False)
+writer.save()
