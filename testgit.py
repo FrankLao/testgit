@@ -32,6 +32,6 @@ data_meminfo = fl.data_released("".join(["data_meminfo", "_", ym]))
 data_itg = pd.merge(data_itg,data_prodinfo,how='left',on='产品key')
 
 '''数据统计'''
-
+first_itg = fl.get_firsttime(data_itg, colname=["会员手机号码", "交易时间", "交易日期"],sortcol=["会员手机号码", "交易时间"], dropcol=["会员手机号码"],rename={"交易日期": "年度首次积分日期"})
 
 '''数据导出'''
